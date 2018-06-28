@@ -15,7 +15,7 @@ def create_rideoffer():
 			Request =Rideoffer(id,data['driver'],data['destination'] )
 			user.append(Request)  
 		return jsonify(Request.get_dict()), 201
-	#Add an Attribut error to catch the errors
+		
 	except AttributeError:
 		return jsonify({
 			'status': 'fail',
