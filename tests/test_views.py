@@ -23,7 +23,7 @@ class TestClass(unittest.TestCase):
 
             response = self.client().post('/api/v1/users/requests', 
             content_type = 'application/json', data =json.dumps(post_data))
-            reply = json.loads(response.data.decode())
+            reply = json.loads(response.data)
             if reply['requests'] == None :
                 return jsonify({'message': 'Please fill in a request'})
                 

@@ -1,0 +1,3 @@
+{
+  "tests/test_views.py::TestClass::test_create_rideoffer": true
+}

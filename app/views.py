@@ -18,6 +18,6 @@ def create_rideoffer():
 	#Add an Attribut error to catch the errors
 	except AttributeError:
 		return jsonify({
-			'status': 'FAIL',
-			'message': 'Failed to create a request. Invalid data'
+			'status': 'fail',
+			'message': 'failed to create a request. Invalid data'
 		}), 400
