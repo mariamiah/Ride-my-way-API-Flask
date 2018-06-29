@@ -21,16 +21,25 @@ class TestClass(unittest.TestCase):
                 }
             )
 
-            response = self.client().post('/api/v1/users/requests', 
+            response = self.client().post('/api/v1/rides', 
             content_type = 'application/json', data =json.dumps(post_data))
-            reply = json.loads(response.data)
-            if reply['requests'] == None :
-                return jsonify({'message': 'Please fill in a request'})
+            
+            print(response.data)
+            self.assertEqual(response.status_code,201)
+            # if reply['requests'] == None :
+            #     return jsonify({'message': 'Please fill in a request'})
                 
     
-            # self.assertEquals(reply['status'], 'OK')
-            # self.assertEquals(reply['message'], 'A new request has been created')
+           
             self.assertEqual(response.status_code, 201 )
-
+        ##Fetch all rides
+    def test_fetch_rideoffer(self):
+        response= self.client().get('/api/v1/rides',
+        content_type='application/json')
+        print(response.data)
+        self.assertEqual(response.status_code,200)
+        self.assertEqual(response.status_code,200)
+        
+       
 if __name__ == "__main__":
     unittest.main()
