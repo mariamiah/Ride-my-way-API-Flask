@@ -12,4 +12,7 @@ install:
 #command to run tests
 
 script:
- - nosetests
+ - python -m pytest
+ -coverage run -m pytest
+ -coverage report
+after_success: coveralls
