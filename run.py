@@ -1,9 +1,9 @@
 from flask import Flask,jsonify,request
 # from app import views
-from app.models import Rideoffer
+from app.models import RideOffer
 import json
 app = Flask(__name__)
-user = []
+users = []
 
 @app.route('/api/v1/rides' ,methods= ['POST'])
 def create_rideoffer():
@@ -12,12 +12,12 @@ def create_rideoffer():
 	data = request.get_json()
 	try:
 		if isinstance(data['driver'], str) and isinstance(data['destination'], str):
-			id = len(user)
+			id = len(users)
 			id += 1 
-			Ride =Rideoffer(id,data['driver'],data['destination'] )
-			user.append(Ride)  
+			Ride =RideOffer(id,data['driver'],data['destination'] )
+			users.append(Ride)  
 		return jsonify(Ride.get_dict()), 201
-	#Add an Attribut error to catch the errors
+	
 	except AttributeError:
 		return jsonify({
 			'status': 'FAIL',
@@ -27,14 +27,14 @@ def create_rideoffer():
 @app.route('/api/v1/rides',methods= ['GET'])
 def fetch_all_rides():
 	"""This endpoint feteches all rides"""
-	rides =[ride.get_dict() for ride in user]
+	rides =[ride.get_dict() for ride in users]
 	return jsonify({'Rides':rides}),200
 
 @app.route('/api/v1/rides/<id>', methods = ['GET'])
 def fetch_ride_id(id):
 	fetch_rides = []
-	data = user
-	for obj in user:
+	data = users
+	for obj in users:
 		if int(id) > len(data):
 			return jsonify({
 				'status':'Fail',
