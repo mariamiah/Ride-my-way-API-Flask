@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/mariamiah/Ride-my-way2.svg?branch=develop)](https://travis-ci.org/mariamiah/Ride-my-way2)
-
+[![Coverage Status](https://coveralls.io/repos/github/mariamiah/Ride-my-way2/badge.svg?branch=develop)](https://coveralls.io/github/mariamiah/Ride-my-way2?branch=develop)
 # Ride-my-way2
 Ride-My-Way2 provides provides guidelines for the Ride-My-Way APIs which encourage consistency across applications. 
 
