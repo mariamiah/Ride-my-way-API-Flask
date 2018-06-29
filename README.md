@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mariamiah/Ride-my-way2.svg?branch=master)](https://travis-ci.org/mariamiah/Ride-my-way2)
+[![Build Status](https://travis-ci.org/mariamiah/Ride-my-way2.svg?branch=develop)](https://travis-ci.org/mariamiah/Ride-my-way2)
 
 # Ride-my-way2
 Ride-My-Way2 provides provides guidelines for the Ride-My-Way APIs which encourage consistency across applications. 
