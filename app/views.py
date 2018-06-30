@@ -1,22 +1,24 @@
 from flask import Flask, request, jsonify
-from .models import RideOffer
-from run import app
+from app.models import RideOffer
+from app import app
 import json
+
+app = Flask(__name__, static_folder=None)
+
 users = []
 
-
-@app.route('/api/v1/rides', methods=['POST'])
-def create_rideoffer():
+@app.route('/api/v1/rides',methods=['POST'])
+def create_rideoffer(RideOffer,Ride):
     """ This endpoint creates a ride offer """
 
     data = request.get_json()
     try:
         if isinstance(data['driver'], str) and isinstance(data['destination'], str):
-            id = len(users)
-            id += 1
-            Request = RideOffer(id, data['driver'], data['destination'])
-            users.append(Request)
-        return jsonify(Request.get_dict()), 201
+            ride_id = len(users)
+            ride_id += 1
+            Ride= RideOffer(ride_id,data['driver'], data['destination'])
+            users.append(Ride)
+        return jsonify(Ride.get_dict()), 201
 
     except AttributeError:
         return jsonify({
@@ -29,7 +31,7 @@ def create_rideoffer():
 def fetch_all_rides():
     """This endpoint fetches all rides"""
     rides = [ride.get_dict() for ride in users]
-    return jsonify({'Rides': rides}), 200
+    return jsonify({'Rides': rides}),200
 
 
 @app.route('/api/v1/rides/<id>', methods=['GET'])
