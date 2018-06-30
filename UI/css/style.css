@@ -1,0 +1,250 @@
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:20px;
+  line-height:1.5;
+  padding:0;
+  margin:0;
+  background-color:#AFEEEE;
+  background-image:url("https://mariamiah.github.io/Ride-My-Way/UI/img/mason-jones-39738-unsplash.jpg");
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+  color:#ffffff;
+    }
+
+
+/* Add style to the header section in body*/
+ header{
+  padding-top:10px
+  min-height:40px;
+  border-bottom:#9B8A99 3px solid;
+}
+ /* Add a black background color to the top navigation */
+.topnav {
+    background-color:#333333;
+    overflow:hidden;
+}
+/* Style the links inside the navigation bar */
+.topnav a {
+    float:center;
+    color:#ffffff;
+    text-align:center;
+    text-decoration:none;
+    font-size:17px;
+}
+/*Add style to the unordered list items in the menu */
+.topnav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.topnav li {
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:18px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+  display: inline-block;
+  margin-right: -4px;
+}
+ .topnav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color:#AFEEEE;
+    color: black;
+}
+/* Add a color to the active/current link */
+.topnav a:active {
+   color:red;
+  cursor: default;
+}
+#list1{
+  float:left;
+}
+
+/*Resizing the getting started button*/
+#search{
+    width: 20em;  height: 5em;
+    color:#ffffff;
+    background-color:#50D050;
+    font-size:15px;
+    border-radius:25px;
+}
+#button_1{
+  width: 7em; height:2em;
+}
+#email{
+  width:100px;
+  height:80px;
+  border-radius:14px;
+  
+}
+#password{
+  width:100px;
+  height:80px;
+  border-radius:14px;
+}
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (min-width: 600px) {
+  .topnav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+  #submitId{
+   border-radius: 18px;
+  -moz-border-radius: 5px
+   width:100%
+   font-size:24px;
+  }
+    
+    
+ /* Add style to the container class*/
+  .container{
+    width:80%
+    margin:auto;
+    overflow:hidden;
+  }
+ #textbox input[type="email"]{
+   padding:4px;
+   height:25px;
+   width:250px;
+ }
+#textbox input[type="password"]{
+   padding:4px;
+   height:25px;
+   width:250px;
+ }
+
+/* newsletter*/
+#newsletter{
+  padding:15px;
+  color:#000000;
+ }
+#newsletter form{
+  float:center;
+  margin-top:50px;
+}
+ #newsletter input[type="email"]{
+   padding:4px;
+   height:25px;
+   width:250px;
+ }
+/* Add style to footer*/
+ footer{
+   padding:20px;
+   margin-top:20px;
+   color:#ffffff;
+   font-size:14px;
+   text-align:center;
+ }
+footer a{
+  color:inherit;
+}
+/*Add style to tables*/
+ table, th, td {
+      padding: 2px;
+}
+/*Add style to check boxes*/
+input[type="checkbox"]{
+  width: 30px; /*Desired width*/
+  height: 30px; /*Desired height*/
+}
+a{
+text-decorations:none;
+  color:inherit;
+}
+#btn {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  text-shadow: 0px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 52px;
+    background:#4a403e;
+  padding: 11px 19px 10px 20px;
+  text-decoration: none;
+  
+}
+
+#btn:hover {
+  background:#55734f;
+  text-decoration: none;
+}
+* {
+    box-sizing: border-box;
+}
+
+/* The "Sign Up" button */
+.button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+  /* Create four columns of equal width */
+  .columns{
+    float: left;
+    width: 25%;
+    height:10%;
+    padding: 4px;
+  background-color:#333333;
+}
+
+/* Style the list */
+.rideoffers{
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  background-color:;#333333;
+}
+
+/* Add shadows on hover */
+.rideoffers:hover {
+    box-shadow:0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/*  header */
+.rideoffers .header {
+    background-color:#333333;
+    color:white;
+    font-size: 25px;
+
+}
+
+/* List items */
+.rideoffers li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+  background-color:#333333;
+}
+/* Grey list item */
+.rideoffers .grey {
+    background-color:#333333;
+    font-size: 14px;
+}
+
+
+/* Change the width of the four columns to 100% 
+(to stack horizontally on small screens) */
+@media only screen and (max-width: 600px) {
+    .columns{
+        width: 50%;
+    }
+
+  }
