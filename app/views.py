@@ -34,19 +34,19 @@ def fetch_all_rides():
     return jsonify({'Rides': rides}),200
 
 
-@app.route('/api/v1/rides/<id>', methods=['GET'])
-def fetch_ride_id(id):
+@app.route('/api/v1/rides/<ride_id>', methods=['GET'])
+def fetch_rideId(ride_id):
     fetch_rides = []
-    data = users
-    for obj in users:
-        if int(id) > len(data):
+    
+    for ride_id in users:
+        if int(ride_id) > len(users):
             return jsonify({
-                'status': 'Fail',
+                'status': 'fail',
                 'message': 'ID not found. Please add a valid ID'
             }), 400
-        obj = data[int(id)-1]
+        obj = users[int(ride_id)-1]
         fetch_rides.append(obj.get_dict())
-        return jsonify({
+    return jsonify({
             'status': 'Success',
             'request': fetch_rides
         }), 200
