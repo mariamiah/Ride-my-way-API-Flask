@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder=None)
 users = []
 
 @app.route('/api/v1/rides',methods=['POST'])
-def create_rideoffer(RideOffer,Ride):
+def create_rideoffer():
     """ This endpoint creates a ride offer """
 
     data = request.get_json()

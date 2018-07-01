@@ -1,7 +1,7 @@
 import json
 import flask
 from flask import jsonify
-from run import app
+from app.views import app
 import unittest
 
 #import requests
