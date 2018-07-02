@@ -28,4 +28,4 @@ Use three simple, common response codes indicating (1) success, (2) failure due 
 -POST/rides/[id]/requests
 
 ## Authors
--Maria Nanfuka https://ridemyway23-api-heroku.herokuapp.com/
+-Maria Nanfuka https://mariam-ride.herokuapp.com/
