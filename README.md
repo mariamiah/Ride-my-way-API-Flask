@@ -8,8 +8,8 @@ Ride-My-Way2 provides provides guidelines for the Ride-My-Way APIs which encoura
 ## Getting started
 -The URL that identifies the resource should include nouns and not verbs.
 -Use HTTP verbs (GET, POST, PUT, DELETE) to operate on the collections and elements.
--Put the version number at the base of your URL, for example http://example.com/v1/path/to/resource.
--Formats should be in the form of api/v2/resource/{id}.json
+-Put the version number at the base of your URL.
+-Formats should be in the form of api/v1/resource/{id}.json
 
 ## Prerequisites
 -Web browser 
