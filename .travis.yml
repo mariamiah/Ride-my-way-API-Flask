@@ -12,8 +12,8 @@ install:
 
 #command to run tests
 
-script: python -m pytest && coverage run -m pytest && coverage report
+script: nosetests --with-coverage --cover-package=app && coverage report
 
 
 after_success:
- -coveralls
+ - coveralls
