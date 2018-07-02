@@ -2,6 +2,7 @@ class Config(object):
     """
     Common configurations
     """
+    DEBUG = False
 
 class DevelopmentConfig(Config):
     """
