@@ -1,7 +1,6 @@
-engines:
-  duplication:
+plugins:
+  pep8:
     enabled: true
-    config:
-      languages:
-      - python:
-          python_version: 3.5.6
+engines:
+  pylint:
+    enabled: true
