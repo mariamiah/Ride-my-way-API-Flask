@@ -53,18 +53,13 @@ def fetch_ride_id(id):
         }), 200
 
 
-@app.route('/api/v1/rides/<id>/requests', methods=['POST'])
+@app.route('/api/v1/rides/<int:id>/requests', methods=['POST'])
 def request_ride_id(id):
     request_ride = []
-    data = users
-    for obj in users:
-        if int(id) > len(data):
-            return jsonify({
-                           'status': 'fail',
-                           'message': 'ID doesnot exist'}), 400
-        obj = data[int(id)-1]
-        request_ride.append(obj.post_dict())
-        return jsonify({
-                         'status': 'Success',
-                         'request': request_ride
-                         }), 200
+    if id == 0 or id > len(users):
+        return jsonify({"Message":"Index out of range"}), 400
+    
+    if id !=0 and id <= len(users):
+        ride = users[id-1]
+        request_ride.append(ride.get_dict())
+        return jsonify({"requested_ride":request_ride,"status":"ride" + str(id)+"successfully requested"}),200
