@@ -14,8 +14,7 @@ def create_rideoffer():
 
     data = request.get_json()
     try:
-        if isinstance(data['driver'], str) and isinstance
-        (data['destination'], str):
+        if isinstance(data['driver'], str) and isinstance(data['destination'], str):
             ride_id = len(users)
             ride_id += 1
             Ride = RideOffer(ride_id, data['driver'], data['destination'])
