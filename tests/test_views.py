@@ -28,10 +28,10 @@ class TestClass(unittest.TestCase):
 
 
 def test_fetch_all_rides(self):
-        self.response = self.client().get('/api/v1/rides',
+        response = self.client().get('/api/v1/rides',
                                      content_type='application/json')
-        print(self.response.data)
-        self.assertEqual(self.response.status_code, 200)
+        print(response.data)
+        self.assertEqual(response.status_code, 200)
 # Fetch a single ride offer
 
 
