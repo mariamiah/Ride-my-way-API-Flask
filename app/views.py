@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from app.models import RideOffer
 from app import app
-import json
+
 
 app = Flask(__name__, static_folder=None)
 
@@ -35,17 +35,17 @@ def fetch_all_rides():
     return jsonify({'Rides': rides}), 200
 
 
-@app.route('/api/v1/rides/<id>', methods=['GET'])
-def fetch_ride_id(id):
+@app.route('/api/v1/rides/<int:ride_id>', methods=['GET'])
+def fetch_ride_id(ride_id):
     fetch_rides = []
     data = users
     for obj in users:
-        if int(id) > len(data):
+        if int(ride_id) > len(data):
             return jsonify({
                 'status': 'fail',
                 'message': 'ID not found. Please add a valid ID'
             }), 400
-        obj = data[int(id)-1]
+        obj = data[int(ride_id)-1]
         fetch_rides.append(obj.get_dict())
         return jsonify({
             'status': 'Success',
@@ -53,13 +53,13 @@ def fetch_ride_id(id):
         }), 200
 
 
-@app.route('/api/v1/rides/<int:id>/requests', methods=['POST'])
-def request_ride_id(id):
+@app.route('/api/v1/rides/<int:ride_id>/requests', methods=['POST'])
+def request_ride_id(ride_id):
     request_ride = []
-    if id == 0 or id > len(users):
+    if ride_id == 0 or ride_id > len(users):
         return jsonify({"Message":"Index out of range"}), 400
     
-    if id !=0 and id <= len(users):
-        ride = users[id-1]
+    if ride_id !=0 and ride_id <= len(users):
+        ride = users[ride_id-1]
         request_ride.append(ride.get_dict())
-        return jsonify({"requested_ride":request_ride,"status":"ride" + str(id)+"successfully requested"}),200
+        return jsonify({"requested_ride":request_ride,"status":"ride" + str(ride_id)+"successfully requested"}),200
