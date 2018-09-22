@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/mariamiah/Ride-my-way2.svg?branch=develop)](https://travis-ci.org/mariamiah/Ride-my-way2)
 [![Coverage Status](https://coveralls.io/repos/github/mariamiah/Ride-my-way2/badge.svg?branch=develop)](https://coveralls.io/github/mariamiah/Ride-my-way2?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/302d910c9518da06613e/maintainability)](https://codeclimate.com/github/mariamiah/Ride-my-way2/maintainability)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c08f98348122401696ab3b06dec4e794)](https://app.codacy.com/app/mariamiah/Ride-my-way2?utm_source=github.com&utm_medium=referral&utm_content=mariamiah/Ride-my-way2&utm_campaign=Badge_Grade_Dashboard)
+
 
 # Ride-my-way2
 Ride-My-Way2 provides provides guidelines for the Ride-My-Way APIs which encourage consistency across applications. 
