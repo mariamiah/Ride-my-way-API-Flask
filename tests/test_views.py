@@ -1,8 +1,5 @@
 import json
-import flask
-from flask import jsonify
 from app.views import app
-from app.models import RideOffer
 import unittest
 
 
