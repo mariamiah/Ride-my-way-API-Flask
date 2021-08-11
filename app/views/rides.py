@@ -1,0 +1,1 @@
+# views to manage rides
