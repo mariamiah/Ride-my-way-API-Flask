@@ -1,12 +1,8 @@
 from flask import Flask, request, jsonify
 from app.models import RideOffer
-from app import app
-
-
-app = Flask(__name__, static_folder=None)
+from . import app
 
 users = []
-
 
 @app.route('/api/v1/rides', methods=['POST'])
 def create_rideoffer():

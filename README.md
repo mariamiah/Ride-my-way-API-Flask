@@ -28,3 +28,7 @@
 - lock dependencies with `pipenv lock -r > requirements.txt`
 - uninstall dependencies with `pipenv uninstall <package-name>`
 - remove virtual environment with `pipenv --rm`
+
+#### Technologies used
+- Flask
+- MariaDB

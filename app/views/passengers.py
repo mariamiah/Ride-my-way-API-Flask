@@ -1,0 +1,1 @@
+# passengers can view all available ride offers
