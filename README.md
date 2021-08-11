@@ -24,7 +24,7 @@
 ```
 - specify python version using `pyenv local 3.8.0`
 - setup environment using `pipenv shell`
-- start project with `pipenv run python app.py`
+- start project with `pipenv run python run.py`
 - lock dependencies with `pipenv lock -r > requirements.txt`
 - uninstall dependencies with `pipenv uninstall <package-name>`
 - remove virtual environment with `pipenv --rm`
