@@ -32,9 +32,11 @@
 
 ### MariaDB
 - install mariaDB on your device using this [link](https://www.mariadbtutorial.com/getting-started/install-mariadb/)
+- install mariaDB Connector/Python using `pipenv install mariadb`
 - start mariaDB `mariadb -u root -p`
 - create a database `CREATE DATABASE demo;`
 - provide the database details to the .env file
 #### Technologies used
 - Flask
 - MariaDB
+- SQLAlchemy ORM
