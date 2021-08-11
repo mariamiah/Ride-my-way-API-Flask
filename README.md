@@ -26,9 +26,15 @@
 - setup environment using `pipenv shell`
 - start project with `pipenv run python run.py`
 - lock dependencies with `pipenv lock -r > requirements.txt`
+- create a `.env` file and copy the `.env.example` contents into `.env`
 - uninstall dependencies with `pipenv uninstall <package-name>`
 - remove virtual environment with `pipenv --rm`
 
+### MariaDB
+- install mariaDB on your device using this [link](https://www.mariadbtutorial.com/getting-started/install-mariadb/)
+- start mariaDB `mariadb -u root -p`
+- create a database `CREATE DATABASE demo;`
+- provide the database details to the .env file
 #### Technologies used
 - Flask
 - MariaDB
