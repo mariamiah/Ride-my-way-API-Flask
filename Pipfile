@@ -8,6 +8,9 @@ flask = "*"
 mariadb = "*"
 sqlalchemy = "*"
 flask-marshmallow = "*"
+flask-sqlalchemy = "*"
+marshmallow-sqlalchemy = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
