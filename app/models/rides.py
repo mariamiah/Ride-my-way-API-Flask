@@ -1,10 +1,10 @@
 import sqlalchemy
 from sqlalchemy.ext.associationproxy import association_proxy
-from ..app import db, ma
+from .. import db, ma
 
 class Ride(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    driver_id = db.Column(db.String(255), db.ForeignKey('user.id'))
+    driver_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     start_time = db.Column(db.String(255), index=True, unique=True)
     destination = db.Column(db.String(255), unique=True)
     source = db.Column(db.String(255), unique=False)
@@ -13,6 +13,18 @@ class Ride(db.Model):
 
 class RideRequest(db.Model):
     id = db.Column(db.String(32), nullable=False, primary_key=True)
-    rid = db.Column(db.String(255), db.ForeignKey('ride.id'))
-    passenger_id = db.Column(db.String(255), db.ForeignKey('user.id'))
+    rid = db.Column(db.Integer, db.ForeignKey('ride.id'))
+    passenger_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     status = db.Column(db.Boolean, default=False, nullable=False)
+
+
+class RideSchema(ma.SQLAlchemySchema):
+    class Meta:
+        model = Ride
+    id = ma.auto_field()
+    driver_id = ma.auto_field()
+    start_time = ma.auto_field()
+    destination = ma.auto_field()
+    source = ma.auto_field()
+    active = ma.auto_field()
+    ride_date = ma.auto_field()

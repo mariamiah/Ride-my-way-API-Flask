@@ -1,6 +1,6 @@
 import sqlalchemy
 from sqlalchemy.ext.associationproxy import association_proxy
-from ..app import db, ma
+from .. import db, ma
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -29,20 +29,19 @@ class User(db.Model):
 
 class Relationship(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    requesting_user_id = db.Column(db.Integer, db.ForeignKey('User.id'), primary_key=True)
-    receiving_user_id = db.Column(db.Integer, db.ForeignKey('User.id'), primary_key=True)
+    requesting_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
+    receiving_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
     status = db.Column(db.Integer)
 
 class UserSchema(ma.SQLAlchemySchema):
     class Meta:
         model = User
-
     id = ma.auto_field()
     name = ma.auto_field()
     username = ma.auto_field()
     email = ma.auto_field()
-    password = ma.autofield()
-    phone_number = ma.autofield()
+    password = ma.auto_field()
+    phone_number = ma.auto_field()
     role = ma.auto_field()
 
 user_schema = UserSchema()

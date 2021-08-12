@@ -16,3 +16,8 @@ environ.get('DATABASENAME')
 
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
+
+from .models.users import User, Relationship, UserSchema
+from .models.rides import Ride, RideRequest
+
+db.create_all()
