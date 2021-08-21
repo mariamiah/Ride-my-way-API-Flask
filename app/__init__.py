@@ -1,23 +1,22 @@
-import json
-import mariadb
-import sqlalchemy
+"""Initialize Flask app."""
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-from os import environ
-from sqlalchemy.ext.declarative import declarative_base
 
-# Initialize application
-app = Flask(__name__, static_folder=None)
-app.config["SQLALCHEMY_DATABASE_URI"] = "mariadb+mariadbconnector://"+\
-environ.get('USER')+":"+environ.get('PASSWORD')+"@"+\
-environ.get('HOSTNAME')+":"+environ.get('PORT')+"/"+\
-environ.get('DATABASENAME')
+db = SQLAlchemy()
+ma = Marshmallow()
 
-db = SQLAlchemy(app)
-ma = Marshmallow(app)
+def create_app():
+    """Construct the core application."""
+    app = Flask(__name__, instance_relative_config=False)
+    app.config.from_object("config.Config")
 
-from .models.users import User, Relationship, UserSchema
-from .models.rides import Ride, RideRequest
+    db.init_app(app)
+    ma.init_app(app)
 
-db.create_all()
+    with app.app_context():
+        from . import views
+
+        db.create_all()
+
+        return app
