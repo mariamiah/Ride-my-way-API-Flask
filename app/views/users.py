@@ -1,6 +1,7 @@
 from flask import current_app as app
 from flask import request, make_response, jsonify
 from ..models.users import User, db
+import bcrypt
 
 @app.route("/api/v1/auth/signup", methods=["POST"])
 def register():
@@ -9,7 +10,7 @@ def register():
     username = data['username']
     name = data['name']
     email = data['email']
-    password = data['password']
+    password = data['password'].encode('utf-8')
     phone_number = data['phone_number']
     role = data['role']
     if username and email:
@@ -22,7 +23,7 @@ def register():
             username=username,
             email=email,
             name=name,
-            password=password,
+            password=bcrypt.hashpw(password, bcrypt.gensalt(14)),
             phone_number=phone_number,
             role=role,
         )
