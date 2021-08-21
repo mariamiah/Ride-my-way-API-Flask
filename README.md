@@ -15,6 +15,13 @@
 - Drivers can either accept or reject a ride request.
 - Users can only see and respond to ride offers from their friends on the application .
 - Passengers get real time notifications when their request is accepted or rejected
+
+## API Endpoints
+
+| REQUEST | ROUTE                           | FUNCTIONALITY                 |
+| ------- | ------------------------------- | ----------------------------- |
+| POST    | api/v1/auth/signup              | Registers a user              |
+
 ### Setup
 - clone this repository using `git clone git@github.com:mariamiah/RideShare-API-Flask.git`
 - install pipenv
