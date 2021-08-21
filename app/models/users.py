@@ -1,8 +1,9 @@
-import sqlalchemy
 from sqlalchemy.ext.associationproxy import association_proxy
 from .. import db, ma
 
 class User(db.Model):
+    """Data model for user accounts."""
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), unique=False)
     username = db.Column(db.String(255), index=True, unique=True)
@@ -24,10 +25,12 @@ class User(db.Model):
     desired_friends = association_proxy('requested_rels', 'receiving_user')
 
     def __repr__(self):
-        return '<User %r>' % (self.username)
+        return '<User {}>'.format(self.username)
 
 
 class Relationship(db.Model):
+    """Data model for friendship between users."""
+
     id = db.Column(db.Integer, primary_key=True)
     requesting_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
     receiving_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
